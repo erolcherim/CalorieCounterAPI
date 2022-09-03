@@ -26,6 +26,14 @@ namespace CalorieCounterAPI.DAL
             modelBuilder.Entity<UserFood>()
                 .HasOne(userfood => userfood.Food)
                 .WithMany(food => food.UserFoods);
+
+            modelBuilder.Entity<UserRole>(ur =>
+            {
+                ur.HasKey(ur => new { ur.UserId, ur.RoleId });
+
+                ur.HasOne(ur => ur.Role).WithMany(r => r.UserRoles).HasForeignKey(ur => ur.RoleId);
+                ur.HasOne(ur => ur.User).WithMany(u => u.UserRoles).HasForeignKey(ur => ur.UserId);
+            });
         }
     }
 }

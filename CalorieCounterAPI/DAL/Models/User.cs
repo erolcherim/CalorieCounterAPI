@@ -11,5 +11,6 @@ namespace CalorieCounterAPI.DAL.Models
         public string LastName { get; set; }
         public int Age { get; set; }
         public virtual ICollection<UserFood> UserFoods { get; set; }
+        public ICollection<UserRole> UserRoles { get; set; }
     }
 }
