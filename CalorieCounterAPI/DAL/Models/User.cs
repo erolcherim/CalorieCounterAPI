@@ -1,6 +1,8 @@
-﻿namespace CalorieCounterAPI.DAL.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace CalorieCounterAPI.DAL.Models
 {
-    public class User
+    public class User : IdentityUser<int>
     {
         public int UserId { get; set; }
         public string Email { get; set; } 
