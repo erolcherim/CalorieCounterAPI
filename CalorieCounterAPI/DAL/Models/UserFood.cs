@@ -11,7 +11,7 @@ namespace CalorieCounterAPI.DAL.Models
 
         [ForeignKey("FoodId")]
         public Food Food { get; set; }
-        [ForeignKey("UserId")]
+        [ForeignKey("Id")]
         public User User { get; set; }
 
         //speicific attributes
