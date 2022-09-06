@@ -40,5 +40,19 @@ namespace CalorieCounterAPI.Controllers
 
             return BadRequest();
         }
+
+        [HttpPost("login")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login([FromBody] UserLoginDTO dto)
+        {
+            var token = await _userService.LoginUser(dto);
+
+            if (token == null)
+            {
+                return Unauthorized();
+            }
+
+            return Ok(new { token });
+        }
     }
 }
