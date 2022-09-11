@@ -1,6 +1,7 @@
 ﻿using CalorieCounterAPI.DAL;
 using CalorieCounterAPI.Repositories.AuthWrapperRepository;
 using CalorieCounterAPI.Repositories.FoodRepository;
+using CalorieCounterAPI.Repositories.UserRepository;
 
 namespace CalorieCounterAPI.Repositories.UnitOfWork
 {
@@ -14,6 +15,12 @@ namespace CalorieCounterAPI.Repositories.UnitOfWork
         }
 
         public IFoodRepository Foods
+        {
+            get;
+            private set;
+        }
+
+        public IUserRepository Users
         {
             get;
             private set;
