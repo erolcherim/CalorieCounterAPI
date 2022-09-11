@@ -5,6 +5,7 @@ using CalorieCounterAPI.DAL.Seeders;
 using CalorieCounterAPI.DAL.Utils;
 using CalorieCounterAPI.Repositories.AuthRepositoryWrapper;
 using CalorieCounterAPI.Repositories.AuthWrapperRepository;
+using CalorieCounterAPI.Repositories.UnitOfWork;
 using CalorieCounterAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -89,6 +90,7 @@ builder.Services.AddAuthentication(auth =>
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthWrapperRepository, AuthWrapperRepository>();
 builder.Services.AddScoped<InitialSeed>();
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 string constr = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(constr));
