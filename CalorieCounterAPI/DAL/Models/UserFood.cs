@@ -17,6 +17,9 @@ namespace CalorieCounterAPI.DAL.Models
         //speicific attributes
         public DateTime DateTime { get; set; }
         public int Quantity { get; set; }
+        public int TotalCalories { get; set; }
+        public int TotalProtein { get; set; }
+        public int TotalFat { get; set; }
 
     }
 }
