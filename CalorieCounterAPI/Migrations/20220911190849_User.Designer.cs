@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CalorieCounterAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220903154037_user")]
-    partial class user
+    [Migration("20220911190849_User")]
+    partial class User
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
