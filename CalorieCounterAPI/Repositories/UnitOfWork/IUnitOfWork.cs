@@ -1,4 +1,5 @@
 ﻿using CalorieCounterAPI.Repositories.FoodRepository;
+using CalorieCounterAPI.Repositories.UserFoodRepository;
 using CalorieCounterAPI.Repositories.UserRepository;
 
 namespace CalorieCounterAPI.Repositories.UnitOfWork
@@ -7,6 +8,7 @@ namespace CalorieCounterAPI.Repositories.UnitOfWork
     {
         IFoodRepository Foods { get; }
         IUserRepository Users { get; }
+        IUserFoodRepository UserFoods { get; }
         int Save();
     }
 }

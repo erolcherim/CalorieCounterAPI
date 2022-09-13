@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CalorieCounterAPI.Migrations
 {
-    public partial class users : Migration
+    public partial class use : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -203,8 +203,11 @@ namespace CalorieCounterAPI.Migrations
                     UserFoodId = table.Column<int>(type: "int", nullable: false),
                     FoodId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false)
+                    DateTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    TotalCalories = table.Column<int>(type: "int", nullable: false),
+                    TotalProtein = table.Column<int>(type: "int", nullable: false),
+                    TotalFat = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

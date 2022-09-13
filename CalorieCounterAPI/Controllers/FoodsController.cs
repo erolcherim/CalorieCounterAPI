@@ -100,7 +100,7 @@ namespace CalorieCounterAPI.Controllers
         //DELETE: api/Foods/id
         [HttpDelete("{id}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<IActionResult> DeleteFood(int id)
         {
             var foodInDb = await _unitOfWork.Foods.GetById(id);
 
