@@ -30,7 +30,7 @@ namespace CalorieCounterAPI.Controllers
             return results;
         }
 
-        //GET: api/Foods/Id
+        //GET: api/Foods/{Id}
         [HttpGet("{id}")]
         [Authorize(Roles = "Admin,User")]
         public async Task<ActionResult<FoodDTO>> GetFoods(int id)
@@ -45,8 +45,8 @@ namespace CalorieCounterAPI.Controllers
             return new FoodDTO(result);
         }
 
-        //GET: api/Foods/name
-        [HttpGet("{name}")]
+        //GET: api/Foods/name/{name}
+        [HttpGet("name/{name}")]
         [Authorize(Roles = "Admin,User")]
         public async Task<ActionResult<FoodDTO>> GetFoods(string name)
         {
