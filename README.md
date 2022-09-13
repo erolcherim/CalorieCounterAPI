@@ -18,7 +18,7 @@ Todo @mxrtinax
 
 ## User Stories / Backlog 
 
-User stories can be found at this [Trello kanban board](https://trello.com/invite/b/aeaaUX4Y/f7a205411cce7de1684a1b316f4a3e0d/caloriecounterapi)
+User stories can be found at this [Trello kanban board](https://trello.com/b/aeaaUX4Y/caloriecounterapi)
 The project follows the agile methodology, the work has been split in the following [milestones](https://github.com/erolcherim/CalorieCounterAPI/milestones?state=closed)
 
 ## Use Case Diagram  
