@@ -4,9 +4,9 @@ Web API using .Net Framework that keeps track of foods eaten, calculating daily 
 
 ## Team  
 
-[Erol Cherim](https://github.com/erolcherim)
-[Robert Roman](https://github.com/robert-roman)
-[Paul Martinas](https://github.com/mxrtinax)
+[Erol Cherim](https://github.com/erolcherim)  
+[Robert Roman](https://github.com/robert-roman)  
+[Paul Martinas](https://github.com/mxrtinax)  
 
 ## Demo  
 
