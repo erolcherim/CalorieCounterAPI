@@ -19,7 +19,7 @@ namespace CalorieCounterAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles ="User")]
+        [Authorize(Roles = "Admin,User")]
 
         //GET: api/UserFoods
         public async Task<IActionResult> GetUserFoods()
@@ -33,8 +33,10 @@ namespace CalorieCounterAPI.Controllers
             return Ok(result);
         }
 
+        //FIX 2 methods with same route
         //GET: api/UserFoods/{UserId}
         [HttpGet("{UserId}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> GetUserFoodsByUserId(int id)
         {
             var result = await _unitOfWork.UserFoods.GetAllByUserId(id);
@@ -51,6 +53,7 @@ namespace CalorieCounterAPI.Controllers
 
         //POST: api/UserFoods
         [HttpPost]
+        [Authorize(Roles = "Admin,User")]
         public async Task<ActionResult<UserFoodDTO>> PostUserFoods(UserFoodDTO userFood)
         {
             var time = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
@@ -72,6 +75,7 @@ namespace CalorieCounterAPI.Controllers
 
         //PUT: api/Foods/id
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> PutUserFood(int id, UserFoodDTO userFood)
         {
             var userFoodInDb = await _unitOfWork.UserFoods.GetById(id);
