@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CalorieCounterAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220911194736_users")]
-    partial class users
+    [Migration("20220913182445_use")]
+    partial class use
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -186,13 +186,23 @@ namespace CalorieCounterAPI.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("FoodId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalCalories")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalFat")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalProtein")
                         .HasColumnType("int");
 
                     b.Property<int>("UserFoodId")

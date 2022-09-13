@@ -184,13 +184,23 @@ namespace CalorieCounterAPI.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("FoodId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalCalories")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalFat")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalProtein")
                         .HasColumnType("int");
 
                     b.Property<int>("UserFoodId")

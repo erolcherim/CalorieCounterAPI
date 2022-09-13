@@ -7,7 +7,7 @@ namespace CalorieCounterAPI.DAL.DTOs
         public int UserFoodId { get; set; }
         public int FoodId { get; set; }
         public int UserId { get; set; }
-        public DateTime DateTime { get; set; }
+        public string DateTime { get; set; }
         public int Quantity { get; set; }
         public int TotalCalories { get; set; }
         public int TotalProtein { get; set; }
