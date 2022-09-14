@@ -19,6 +19,7 @@ namespace CalorieCounterAPI.Controllers
 
         //GET: api/Foods
         [HttpGet]
+        [Authorize(Roles = "Admin,User")]
         public async Task<ActionResult<IEnumerable<FoodDTO>>> GetFoods()
         {
             if (_unitOfWork.Foods == null)
@@ -29,8 +30,9 @@ namespace CalorieCounterAPI.Controllers
             return results;
         }
 
-        //GET: api/Foods/Id
+        //GET: api/Foods/{Id}
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<ActionResult<FoodDTO>> GetFoods(int id)
         {
             var result = await _unitOfWork.Foods.GetById(id);
@@ -43,8 +45,9 @@ namespace CalorieCounterAPI.Controllers
             return new FoodDTO(result);
         }
 
-        //GET: api/Foods/name
-        [HttpGet("{name}")]
+        //GET: api/Foods/name/{name}
+        [HttpGet("name/{name}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<ActionResult<FoodDTO>> GetFoods(string name)
         {
             var result = await _unitOfWork.Foods.GetFoodByFoodName(name);
@@ -59,6 +62,7 @@ namespace CalorieCounterAPI.Controllers
 
         //POST: api/Foods
         [HttpPost]
+        [Authorize(Roles = "Admin,User")]
         public async Task<ActionResult<FoodDTO>> PostFoods(FoodDTO food)
         {
             var foodToAdd = new Food();
@@ -76,6 +80,7 @@ namespace CalorieCounterAPI.Controllers
 
         //PUT: api/Foods/id
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> PutFood(int id, FoodDTO food)
         {
             var foodInDb = await _unitOfWork.Foods.GetById(id);
