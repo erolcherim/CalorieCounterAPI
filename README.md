@@ -23,7 +23,7 @@ The project follows the agile methodology, the work has been split in the follow
 
 ## Use Case Diagram  
 
-Todo @mxrtinax UML Diagram
+![uml drawio](https://user-images.githubusercontent.com/48221670/190164516-00c5fe0b-8df9-4d4e-9359-548d722a325f.png)
 
 ## Automation Testing  
 
