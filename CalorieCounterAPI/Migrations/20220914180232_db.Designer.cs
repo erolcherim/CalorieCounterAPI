@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CalorieCounterAPI__Backup.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220914165220_User")]
-    partial class User
+    [Migration("20220914180232_db")]
+    partial class db
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -196,7 +196,7 @@ namespace CalorieCounterAPI__Backup.Migrations
                     b.Property<int>("FoodId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -350,9 +350,7 @@ namespace CalorieCounterAPI__Backup.Migrations
 
                     b.HasOne("CalorieCounterAPI.DAL.Models.User", "User")
                         .WithMany("UserFoods")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Id");
 
                     b.Navigation("Food");
 

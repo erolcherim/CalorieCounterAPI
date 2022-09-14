@@ -58,7 +58,6 @@ namespace CalorieCounterAPI.Controllers
         {
             var time = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             var userFoodToAdd = new UserFood();
-            userFoodToAdd.UserFoodId = userFood.UserFoodId;
             userFoodToAdd.FoodId = userFood.FoodId;
             userFoodToAdd.UserId = userFood.UserId;
             userFoodToAdd.DateTime = time;
@@ -86,7 +85,6 @@ namespace CalorieCounterAPI.Controllers
                 return NotFound("Entry with specified id doesn't exist");
             }
 
-            userFoodInDb.UserFoodId = userFood.UserFoodId;
             userFoodInDb.FoodId = userFood.FoodId;
             userFoodInDb.UserId = userFood.UserId;
             userFoodInDb.DateTime = userFood.DateTime;

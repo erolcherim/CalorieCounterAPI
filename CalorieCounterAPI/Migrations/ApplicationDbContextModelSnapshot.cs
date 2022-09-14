@@ -194,7 +194,7 @@ namespace CalorieCounterAPI__Backup.Migrations
                     b.Property<int>("FoodId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -348,9 +348,7 @@ namespace CalorieCounterAPI__Backup.Migrations
 
                     b.HasOne("CalorieCounterAPI.DAL.Models.User", "User")
                         .WithMany("UserFoods")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Id");
 
                     b.Navigation("Food");
 

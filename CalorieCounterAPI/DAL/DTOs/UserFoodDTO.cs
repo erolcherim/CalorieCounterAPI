@@ -4,7 +4,6 @@ namespace CalorieCounterAPI.DAL.DTOs
 {
     public class UserFoodDTO
     {
-        public int UserFoodId { get; set; }
         public int FoodId { get; set; }
         public int UserId { get; set; }
         public string DateTime { get; set; }
@@ -15,8 +14,7 @@ namespace CalorieCounterAPI.DAL.DTOs
         public int TotalCarbs { get; set; }
 
         public UserFoodDTO(UserFood userFood)
-        {
-            UserFoodId = userFood.UserFoodId;
+        { 
             FoodId = userFood.FoodId;
             UserId = userFood.UserId;
             DateTime = userFood.DateTime;

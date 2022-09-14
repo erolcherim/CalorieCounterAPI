@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CalorieCounterAPI__Backup.Migrations
 {
-    public partial class User : Migration
+    public partial class db : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -203,7 +203,7 @@ namespace CalorieCounterAPI__Backup.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FoodId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: true),
                     DateTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     TotalCalories = table.Column<int>(type: "int", nullable: false),
@@ -218,8 +218,7 @@ namespace CalorieCounterAPI__Backup.Migrations
                         name: "FK_UserFoods_AspNetUsers_Id",
                         column: x => x.Id,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_UserFoods_Foods_FoodId",
                         column: x => x.FoodId,
