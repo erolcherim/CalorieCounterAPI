@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CalorieCounterAPI.DAL.Models
 {
     public class UserFood
     {
         //defining relation
+        [Key]
         public int UserFoodId { get; set; }
         public int FoodId { get; set; }
         public int UserId { get; set; }
@@ -20,6 +22,7 @@ namespace CalorieCounterAPI.DAL.Models
         public int TotalCalories { get; set; }
         public int TotalProtein { get; set; }
         public int TotalFat { get; set; }
+        public int TotalCarbs { get; set; }
 
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CalorieCounterAPI.Migrations
+namespace CalorieCounterAPI__Backup.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -181,8 +181,11 @@ namespace CalorieCounterAPI.Migrations
 
             modelBuilder.Entity("CalorieCounterAPI.DAL.Models.UserFood", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UserFoodId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserFoodId"), 1L, 1);
 
                     b.Property<string>("DateTime")
                         .IsRequired()
@@ -191,10 +194,16 @@ namespace CalorieCounterAPI.Migrations
                     b.Property<int>("FoodId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalCalories")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalCarbs")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalFat")
@@ -203,15 +212,14 @@ namespace CalorieCounterAPI.Migrations
                     b.Property<int>("TotalProtein")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserFoodId")
-                        .HasColumnType("int");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserFoodId");
 
                     b.HasIndex("FoodId");
+
+                    b.HasIndex("Id");
 
                     b.ToTable("UserFoods");
                 });

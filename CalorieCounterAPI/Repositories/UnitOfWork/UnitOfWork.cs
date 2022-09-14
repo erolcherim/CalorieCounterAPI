@@ -13,6 +13,7 @@ namespace CalorieCounterAPI.Repositories.UnitOfWork
         {
             _context = context;
             Foods = new FoodRepository.FoodRepository(_context);
+            UserFoods = new UserFoodRepository.UserFoodRepository(_context);
         }
 
         public IFoodRepository Foods

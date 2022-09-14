@@ -66,6 +66,7 @@ namespace CalorieCounterAPI.Controllers
             userFoodToAdd.TotalCalories = userFood.TotalCalories;
             userFoodToAdd.TotalProtein = userFood.TotalProtein;
             userFoodToAdd.TotalFat = userFood.TotalFat;
+            userFoodToAdd.TotalCarbs = userFood.TotalCarbs;
 
             await _unitOfWork.UserFoods.Create(userFoodToAdd);
             _unitOfWork.Save();
@@ -93,6 +94,7 @@ namespace CalorieCounterAPI.Controllers
             userFoodInDb.TotalCalories = userFood.TotalCalories;
             userFoodInDb.TotalProtein = userFood.TotalProtein;
             userFoodInDb.TotalFat = userFood.TotalFat;
+            userFoodInDb.TotalCarbs = userFood.TotalCarbs;
 
             await _unitOfWork.UserFoods.Update(userFoodInDb);
             _unitOfWork.Save();

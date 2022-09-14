@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace CalorieCounterAPI.Migrations
+namespace CalorieCounterAPI__Backup.Migrations
 {
-    public partial class use : Migration
+    public partial class User : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -199,19 +199,21 @@ namespace CalorieCounterAPI.Migrations
                 name: "UserFoods",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false),
-                    UserFoodId = table.Column<int>(type: "int", nullable: false),
+                    UserFoodId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     FoodId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     DateTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     TotalCalories = table.Column<int>(type: "int", nullable: false),
                     TotalProtein = table.Column<int>(type: "int", nullable: false),
-                    TotalFat = table.Column<int>(type: "int", nullable: false)
+                    TotalFat = table.Column<int>(type: "int", nullable: false),
+                    TotalCarbs = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserFoods", x => x.Id);
+                    table.PrimaryKey("PK_UserFoods", x => x.UserFoodId);
                     table.ForeignKey(
                         name: "FK_UserFoods_AspNetUsers_Id",
                         column: x => x.Id,
@@ -274,6 +276,11 @@ namespace CalorieCounterAPI.Migrations
                 name: "IX_UserFoods_FoodId",
                 table: "UserFoods",
                 column: "FoodId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserFoods_Id",
+                table: "UserFoods",
+                column: "Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

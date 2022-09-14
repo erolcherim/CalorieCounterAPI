@@ -12,6 +12,7 @@ namespace CalorieCounterAPI.DAL.DTOs
         public int TotalCalories { get; set; }
         public int TotalProtein { get; set; }
         public int TotalFat { get; set; }
+        public int TotalCarbs { get; set; }
 
         public UserFoodDTO(UserFood userFood)
         {
@@ -23,6 +24,7 @@ namespace CalorieCounterAPI.DAL.DTOs
             TotalCalories = userFood.TotalCalories;
             TotalProtein = userFood.TotalProtein;
             TotalFat = userFood.TotalFat;
+            TotalCarbs = userFood.TotalCarbs;
         }
         public UserFoodDTO() { }
     }
