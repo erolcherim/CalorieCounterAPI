@@ -35,9 +35,10 @@ namespace CalorieCounterAPI.Controllers
 
         //GET: api/UserFoods/{UserId}
         [HttpGet("{UserId}")]
-        public async Task<IActionResult> GetUserFoodsByUserId(int id)
+        [Authorize(Roles = "Admin,User")]
+        public async Task<IActionResult> GetUserFoodsByUserId(int UserId)
         {
-            var result = await _unitOfWork.UserFoods.GetAllByUserId(id);
+            var result = await _unitOfWork.UserFoods.GetAllByUserId(UserId);
 
             if (result == null)
             {

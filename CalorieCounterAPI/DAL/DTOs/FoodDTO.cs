@@ -13,6 +13,7 @@ namespace CalorieCounterAPI.DAL.DTOs
 
         public FoodDTO(Food food)
         {
+            FoodID = food.FoodId;
             FoodName = food.FoodName;
             UnitSize = food.UnitSize;
             ProteinPerUnit = food.ProteinPerUnit;
