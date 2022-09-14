@@ -10,7 +10,7 @@ Web API using .Net Framework that keeps track of foods eaten, calculating daily 
 
 ## Demo  
 
-Todo @erolcherim
+Todo @robert-roman
 
 ## Database ER Diagram  
 
