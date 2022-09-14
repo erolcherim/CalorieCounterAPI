@@ -14,7 +14,7 @@ Todo @erolcherim
 
 ## Database ER Diagram  
 
-Todo @mxrtinax
+![DIAG(1)](https://user-images.githubusercontent.com/48221670/190151103-65895d3a-c810-4edc-ae23-244b31944585.png)
 
 ## User Stories / Backlog 
 
