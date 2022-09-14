@@ -34,8 +34,6 @@ After running the test suite, the number of tests passed is displayed as an outp
 ![image](https://user-images.githubusercontent.com/48221670/190230053-45da0df0-fe06-4943-a217-280805cff8e4.png)
 
 
-Todo @robert-roman
-
 ## Source control  
 
 The project uses GIT source control, hosted on github. Proof of commits, branches and merging can be found on the [project repo page](https://github.com/erolcherim/CalorieCounterAPI)
