@@ -27,9 +27,12 @@ The project follows the agile methodology, the work has been split in the follow
 
 ## Automation Testing  
 
-For testing purpouse we have created a suite of Postman requests that reproduce a usual use case for the API. The user registers, creates a custom food, logs an entry stating that he ate X units of the created food, edits the amount, then deletes the entry.
+For testing purpouse we have created a suite of Postman requests that reproduce a usual use case for the API.
 The unit tests test the following API controllers: UsersController, AuthController, FoodsController, UserFoodsController.
 After running the test suite, the number of tests passed is displayed as an output
+
+![image](https://user-images.githubusercontent.com/48221670/190230053-45da0df0-fe06-4943-a217-280805cff8e4.png)
+
 
 Todo @robert-roman
 
